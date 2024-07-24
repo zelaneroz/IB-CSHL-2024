@@ -1,0 +1,293 @@
+ScreenManager:
+    LoginScreen:
+        name: "LoginScreen"
+    RegistrationScreen:
+        name: "RegistrationScreen"
+    MainScreen:
+        name: "MainScreen"
+
+
+<LoginScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: "#FFF0EB"
+        Image:
+            source: 'media/logo3.png'
+            width: 50
+            allow_stretch: False
+            size_hint_y:.15
+            pos_hint: {"center_x":.5,"center_y":.2}
+        MDLabel:
+            text: 'spent.io'
+            size_hint_y:.25
+            bold: True
+            halign: "center"
+            font_size: "120px"
+            pos_hint: {"center_x":.5,"center_y":.5}
+        MDCard:
+            size_hint: .7,.7
+            pos_hint: {"center_x":.5,"center_y":.5}
+            orientation: "vertical"
+            border_radius: 40
+            radius: [40]
+            MDBoxLayout:
+                orientation: "vertical"
+                pos_hint: {"center_x":.5,"center_y":.5}
+                MDLabel:
+                    text: "Welcome back!"
+                    halign: "left"
+                    text_color: "#F08DA9"
+                    bold: True
+                    size_hint_y:.2
+                    font_size: "50px"
+                    pos_hint: {"center_x":.55, "center_y":.5}
+                MDTextField:
+                    id:uname
+                    icon_left: "email"
+                    hint_text: "Enter username"
+                    size_hint: .7, .15
+                    pos_hint: {"center_x":.5,"center_y":.5}
+                MDTextField:
+                    id: passwd
+                    icon_left: "key-variant"
+                    hint_text: "Enter password"
+                    password: True
+                    size_hint: .7,.15
+                    pos_hint: {"center_x":.5,"center_y":.5}
+                MDLabel:
+                    text: ""
+                    size_hint_y:.15
+                MDFlatButton:
+                    text: "Sign in"
+                    md_bg_color:"#F08DA9"
+                    pos_hint: {"center_x":.5, "center_y":.2}
+                    size_hint: .3,.1
+                    on_press:
+                        root.try_login()
+                MDTextButton:
+                    text: "Don't have an account? Sign up here"
+                    custom_color: "#F08DA9"
+                    size_hint: 1, .25
+                    halign: "center"
+                    pos_hint: {"center_x":0.5,"center_y":.5}
+                    on_press: root.register_btn()
+
+<RegistrationScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: "#FFF0EB"
+        Image:
+            source: 'media/logo3.png'
+            width: 50
+            allow_stretch: False
+            size_hint_y:.15
+            pos_hint: {"center_x":.5,"center_y":.2}
+        MDLabel:
+            text: 'spent.io'
+            size_hint_y:.15
+            bold: True
+            halign: "center"
+            font_size: "120px"
+            pos_hint: {"center_x":.5,"center_y":.5}
+        MDCard:
+            size_hint: .7,.7
+            pos_hint: {"center_x":.5,"center_y":.5}
+            orientation: "vertical"
+            border_radius: 40
+            radius: [40]
+            MDBoxLayout:
+                orientation: "vertical"
+                pos_hint: {"center_x":.5,"center_y":.5}
+                MDLabel:
+                    text: "Register new account"
+                    halign: "left"
+                    text_color: "#F08DA9"
+                    bold: True
+                    size_hint_y:.15
+                    font_size: "50px"
+                    pos_hint: {"center_x":.55, "center_y":.5}
+                MDTextField:
+                    id:uname
+                    hint_text: "Enter username"
+                    size_hint: .7, .1
+                    hint_font_size: "12px"
+                    pos_hint: {"center_x":.5,"center_y":.5}
+                MDTextField:
+                    id: email
+                    hint_text: "Enter email"
+                    hint_font_size: "10px"
+                    size_hint: .7,.1
+                    pos_hint: {"center_x":.5,"center_y":.5}
+                MDTextField:
+                    id:pass1
+                    hint_text: "Enter password"
+                    size_hint: .7, .1
+                    hint_font_size: "10px"
+                    password: True
+                    pos_hint: {"center_x":.5,"center_y":.5}
+                MDTextField:
+                    id: pass2
+                    hint_text: "Confirm password"
+                    helper_text: "Password must be at least 8 characters long"
+                    helper_text_mode: "on_error"
+                    password: True
+                    size_hint: .7,.1
+                    hint_font_size: "12px"
+                    pos_hint: {"center_x":.5,"center_y":.5}
+                MDLabel:
+                    text: ""
+                    size_hint_y: .05
+                MDFlatButton:
+                    text: "Register"
+                    md_bg_color:"#F08DA9"
+                    pos_hint: {"center_x":.5, "center_y":.2}
+                    size_hint: .3,.05
+                    on_press: root.try_register()
+                MDTextButton:
+                    text: "Already have an account? Log in here"
+                    custom_color: "#F08DA9"
+                    size_hint: 1, .1
+                    halign: "center"
+                    pos_hint: {"center_x":0.5,"center_y":.5}
+                    on_press: root.login_btn()
+<MainScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        md_bg_color: "#FFF0EB"
+        Image:
+            source: 'media/logo3.png'
+            width: 50
+            allow_stretch: False
+            size_hint_y:.15
+            pos_hint: {"center_x":.5,"center_y":.2}
+        MDLabel:
+            text: 'spent.io'
+            size_hint_y:.15
+            bold: True
+            halign: "center"
+            font_size: "120px"
+            pos_hint: {"center_x":.5,"center_y":.5}
+        MDLabel:
+            text: ""
+            size_hint_y:.55
+        MDBoxLayout:
+            size_hint_y: .15
+            orientation: 'horizontal'
+            pos_hint: {"center_x":.5,"center_y":.5}
+            MDIconButton:
+                pos_hint: {"center_x":.5,"center_y":.5}
+                icon: 'media/add.png'
+                icon_size: '60sp'
+                on_release: root.save_popup()
+            MDIconButton:
+                icon: 'media/edit.png'
+                icon_size: '60sp'
+                pos_hint: {"center_x":.5,"center_y":.5}
+                on_release: root.edit_trig()
+            MDIconButton:
+                icon: 'media/bin.png'
+                icon_size: '60sp'
+                pos_hint: {"center_x":.5,"center_y":.5}
+                on_release: root.delete()
+            Spinner:
+                text: "View by Category"
+                id:spinner_id
+                size_hint_y: .3
+                sync_height: True
+                sync_width: True
+                background_color: "pink"
+                pos_hint: {"center_x":.5,"center_y":.5}
+                size: dp(60),dp(60)
+                values: ["Food","Transportation","Leisure","Emergency","Others","All"]
+                on_text: root.spinner_clicked(spinner_id.text)
+            MDIconButton:
+                icon: 'media/logout.png'
+                icon_size: '60sp'
+                pos_hint: {"center_x":.5,"center_y":.5}
+                on_release: root.logout_popup()
+
+    orientation: "vertical"
+<Content>
+    spacing: "12dp"
+    size_hint_y: None
+    height: "150dp"
+
+    MDTextField:
+        id: int_input
+        hint_text: "Enter amount"
+        on_text_validate: root.set_error_message
+        on_focus: root.set_error_message
+
+    MDBoxLayout:
+        orientation: "horizontal"
+        size_hint: 1,.8
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDCheckbox:
+                id: cb1
+                group: 'group1'
+                pos_hint: {"center_y":.5}
+                size_hint: None, None
+                size: dp(35), dp(35)
+                active: True
+                on_active: root.categ_pressed("Food")
+            MDLabel:
+                text: 'Food'
+                font_size: "20px"
+                pos_hint: {"center_x":.5,"center_y":.5}
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDCheckbox:
+                id: cb2
+                pos_hint: {"center_y":.5}
+                group: 'group1'
+                size_hint: None, None
+                size: dp(35), dp(35)
+                active: True
+                on_active: root.categ_pressed("Transportation")
+            MDLabel:
+                text: 'Transportation'
+                font_size: "20px"
+                pos_hint: {"center_x":.5,"center_y":.5}
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDCheckbox:
+                id: cb3
+                pos_hint: {"center_y":.5}
+                group: 'group1'
+                size_hint: None, None
+                size: dp(35), dp(35)
+                active: True
+                on_active: root.categ_pressed("Leisure")
+            MDLabel:
+                text: 'Leisure'
+                font_size: "20px"
+                pos_hint: {"center_x":.5,"center_y":.5}
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDCheckbox:
+                id: cb4
+                pos_hint: {"center_y":.5}
+                group: 'group1'
+                size_hint: None, None
+                size: dp(35), dp(35)
+                active: True
+                on_active: root.categ_pressed("Emergency")
+            MDLabel:
+                text: 'Emergency'
+                pos_hint: {"center_x":.5,"center_y":.5}
+                font_size: "20px"
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDCheckbox:
+                id: cb5
+                pos_hint: {"center_y":.5}
+                group: 'group1'
+                size_hint: None, None
+                size: dp(35), dp(35)
+                active: True
+                on_active: root.categ_pressed("Others")
+            MDLabel:
+                text: 'Others'
+                pos_hint: {"center_x":.5,"center_y":.5}
+                font_size: "20px"

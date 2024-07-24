@@ -1,0 +1,97 @@
+ScreenManager:
+    id: scr_manager
+
+    IntroScreen:
+        name: "IntroScreen"
+
+    PrepareDough:
+        name: "PrepareDough"
+
+    PrebakeDough:
+        name: "PrebakeDough"
+
+    FinalStep:
+        name: "PrebakeDough"
+
+<IntroScreen>:
+    MDCard:
+        size_hint: .7,.7
+        pos_hint: {"center_x":.5,"center_y":.5}
+        md_bg_color: "#f123a6"
+        orientation: "vertical"
+        MDLabel:
+            text:"Pizza Tutorial"
+            font_style: "H1"
+            halign: "center"
+        FitImage:
+            size_hint: 1,0.7
+            radius: 36,36,0,0
+            source:"pizza.jpeg"
+        MDRaisedButton:
+            text:"Next Step"
+            on_press: root.parent.current = "PrepareDough"
+            pos_hint:{"center_x":.5}
+
+<PrepareDough>:
+    MDCard:
+        size_hint: .7, .7
+        pos_hint: {"center_x":.5,"center_y":.5}
+        md_bg_color: "#f123a6"
+        orientation: "vertical"
+
+        MDLabel:
+            text:"Prepare Dough"
+            font_style: "H5"
+            halign: "center"
+            size_hint: 1,.1
+            color: "#FFFFFF"
+        FitImage:
+            size_hint: 1,0.7
+            radius: 36,36,0,0
+            source:"dough_prep.jpeg"
+
+        MDBoxLayout:
+            MDRaisedButton:
+                size_hint: .5,1
+                text:"Previous Step"
+                on_press: root.parent.current="IntroScreen"
+            MDRaisedButton:
+                size_hint: .5,1
+                text:"Next Step"
+                on_press: root.parent.current="PrebakeDough"
+
+<PrebakeDough>
+    MDCard:
+        size_hint: .7, .7
+        pos_hint: {"center_x":.5,"center_y":.5}
+        md_bg_color: "#f123a6"
+        orientation: "vertical"
+
+        MDLabel:
+            text:"Prepare Dough"
+            font_style: "H5"
+            halign: "center"
+            size_hint: 1,.1
+            color: "#FFFFFF"
+        FitImage:
+            size_hint: 1,0.7
+            radius: 36,36,0,0
+            source:"dough_prep.jpeg"
+
+        MDBoxLayout:
+            MDRaisedButton:
+                size_hint: .5,1
+                text:"Previous Step"
+                on_press: root.parent.current="PrepareDough"
+            MDRaisedButton:
+                size_hint: .5,1
+                text:"Next Step"
+                on_press: root.parent.current="FinalStep"
+
+<Final Step>
+    MDLabel:
+        text:"Done"
+        font_style: "H5"
+        halign: "center"
+        size_hint: 1,.1
+        color: "#FFFFFF"

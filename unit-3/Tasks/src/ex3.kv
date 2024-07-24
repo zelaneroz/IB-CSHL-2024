@@ -1,0 +1,50 @@
+Screen:
+    size: 500,500
+
+    MDLabel:
+        id: text
+        text: "Author A"
+        font_style: "H1"
+        pos_hint: {"center_x":.5, "center_y":.8}
+        halign: "center"
+        valign: "top"
+        text_color: "#000000"
+    MDBoxLayout:
+        pos_hint: {"center_x":.5,"center_y":.5}
+        size_hint: .7,.2
+        orientation: "horizontal"
+
+        MDChip:
+            text: "Author A"
+            pos_hint: {"center_y":.5}
+            icon_right: "close-circle-outline"
+            md_bg_color: "#003049"
+            text_color: "#FFFFFF"
+            on_press: app.change_author("A")
+        MDChip:
+            text: "Author B"
+            pos_hint: {"center_y":.5}
+            icon_right: "close-circle-outline"
+            md_bg_color: "#D62828"
+            text_color: "#FFFFFF"
+            on_press: app.change_author("B")
+        MDChip:
+            text: "Author C"
+            pos_hint: {"center_y":.5}
+            icon_right: "close-circle-outline"
+            md_bg_color: "#F77F00"
+            on_press: app.change_author("C")
+        MDChip:
+            text: "Author D"
+            pos_hint: {"center_y":.5}
+            icon_right: "close-circle-outline"
+            md_bg_color: "#FCBF49"
+            text_color: "#FFFFFF"
+            on_press: app.change_author("D")
+        MDChip:
+            text: "Author E"
+            pos_hint: {"center_y":.5}
+            icon_right: "close-circle-outline"
+            md_bg_color: "#EAE2B7"
+            text_color: "#FFFFFF"
+            on_press: app.change_author("E")

@@ -1,0 +1,23 @@
+Screen:
+    size: 500,500
+
+    MDBoxLayout:
+        pos_hint: {"center_x":.5}
+        size_hint: .7,.7
+        md_bg_color: "#fdfcdc"
+        orientation: "vertical"
+
+        MDLabel:
+            text:"Hello World"
+            halign: "center"
+            font_size: "34pt"
+
+        MDRaisedButton:
+            text: "Close"
+            size_hint: .5,1
+            font_size: "34pt"
+            pos_hint: {"center_x":.5}
+            md_bg_color: "#407167"
+            on_press:
+                app.close()
+

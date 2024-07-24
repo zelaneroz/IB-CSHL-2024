@@ -1,0 +1,43 @@
+Screen:
+    size: 500,500
+
+    MDBoxLayout:
+        pos_hint:{"center_x":.5,"center_y":.5}
+        size_hint: .6,.6
+        orientation: "vertical"
+        MDLabel:
+            text: "Currency Converter"
+            font_size: "60"
+            halign: "center"
+            bold: True
+        MDTextField:
+            id: user_input
+            hint_text: "Enter amount in EUR"
+            font_size: 40
+            on_text:
+                app.set_input()
+        MDBoxLayout:
+            pos_hint:{"center_x":.5}
+            orientation: "horizontal"
+            MDLabel:
+                text:"Click to Convert"
+                font_size: "30px"
+                text_color: "grey"
+            MDRaisedButton:
+                md_bg_color: "red"
+                text: "JPY"
+                on_release:
+                    app.to_jpy()
+            MDRaisedButton:
+                text: "USD"
+                md_bg_color: "blue"
+                on_release:
+                    app.to_usd()
+        MDLabel:
+            id: output
+            text: ""
+            halign:"center"
+            bold:True
+            font_size: "50px"
+
+

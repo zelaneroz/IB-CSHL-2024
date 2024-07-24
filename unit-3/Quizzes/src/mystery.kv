@@ -1,0 +1,53 @@
+ScreenManager:
+    MysteryPageA:
+        name: "MysteryPageA"
+    MysteryPageB:
+        name: "MysteryPageB"
+
+<MysteryPageA>:
+    MDBoxLayout:
+        orientation: "vertical"
+        size_hint: .8,.8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        MDLabel:
+            id: texta
+            text: ""
+            font_size: "50px"
+            halign:"center"
+            valign: "center"
+            bold: True
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDRaisedButton:
+                text: "Press me"
+                on_press:
+                    root.message1()
+            MDRaisedButton:
+                text: "Next Page"
+                on_press:
+                    text: ""
+                    root.parent.current="MysteryPageB"
+
+<MysteryPageB>:
+    MDBoxLayout:
+        orientation: "vertical"
+        size_hint: .8,.8
+        pos_hint: {"center_x":.5, "center_y":.5}
+        MDLabel:
+            id: textb
+            text: ""
+            font_size: "50px"
+            halign:"center"
+            valign: "center"
+            bold: True
+        MDBoxLayout:
+            orientation: "horizontal"
+            MDRaisedButton:
+                text: "Press me"
+                on_press:
+                    root.message2()
+            MDRaisedButton:
+                text: "Next Page"
+                on_press:
+                    textb.text: ""
+                    root.parent.current="MysteryPageA"

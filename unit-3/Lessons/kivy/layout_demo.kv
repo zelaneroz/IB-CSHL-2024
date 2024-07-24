@@ -1,0 +1,44 @@
+Screen:
+    size: 500, 500
+
+    MDBoxLayout:
+        id: main_box
+        orientation: "vertical"
+        size_hint: 1, .3 #.3 is 30% of the box
+        md_bg_color: "#a8dadc"
+        pos_hint: {"center_x":.5, "center_y":.5}
+
+        MDTextField: #allows to get info type text
+            id: user_start_x
+            hint_text: "Enter a number"
+            mode: "round"
+            size_hint: .25,1
+            pos_hint: {"center_x":.5}
+            on_text: app.set_counter() #goes to set_counter method in python
+
+
+        MDBoxLayout: #another box inside
+            id: second_box
+            orientation: "horizontal"
+            md_bg_color: "#e63946"
+
+            MDLabel:
+                id:counter_label
+                font_style: "H3"
+                halign: "center" #horizontal alignment
+
+            MDBoxLayout:
+                id:third_box
+                orientation:"vertical"
+
+                MDRaisedButton:
+                    id: up_btn
+                    text: "+1"
+                    on_press: app.change("up")
+                    size_hint: 1,1 #covers whole height
+
+                MDRaisedButton:
+                    id: down_btn
+                    text: "-1"
+                    on_press: app.change("down")
+                    size_hint: 1,1

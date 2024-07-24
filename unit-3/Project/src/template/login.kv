@@ -1,0 +1,92 @@
+ScreenManager:
+    LoginScreen:
+        name: "LoginScreen"
+
+    RegistrationScreen:
+        name: "RegistrationScreen"
+
+    MainScreen:
+        name: "MainScreen"
+
+
+<LoginScreen>:
+    MDCard:
+        size_hint: .6,.8
+        pos_hint: {"center_x":.5,"center_y":.5}
+        orientation: "vertical"
+
+        MDLabel:
+            size_hint: 1,.3
+            font_style: "H2"
+            text: "Login"
+            halign: "center"
+            bold: True
+        MDTextField:
+            id:uname
+            hint_text: "enter username or email"
+            size_hint: .7, .25
+            pos_hint: {"center_x":.5}
+        MDTextField:
+            id: passwd
+            hint_text: "enter password"
+            password: True
+            size_hint: .7,.25
+            pos_hint: {"center_x":.5}
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint: 1,.2
+            MDRaisedButton:
+                id: login
+                text: "Sign in"
+                md_bg_color: "#a8dadc"
+                on_press: root.try_login()
+                size_hint: .4, 1
+            MDRaisedButton:
+                id: register
+                text: "Sign up"
+                md_bg_color: "#a8dadc"
+                on_press: root.try_register()
+                size_hint: .4, 1
+
+<RegistrationScreen>:
+    MDCard:
+        size_hint: .6,.8
+        pos_hint: {"center_x":.5,"center_y":.5}
+        orientation: "vertical"
+
+        MDLabel:
+            size_hint: 1,.4
+            font_style: "H2"
+            text: "Register"
+            bold: True
+            halign: "center"
+        MDTextField:
+            hint_text: "Username or Email"
+            size_hint: .7, .2
+            pos_hint: {"center_x":.5}
+        MDTextField:
+            hint_text: "Password"
+            password: True
+            size_hint: .7,.2
+            pos_hint: {"center_x":.5}
+        MDTextField:
+            hint_text: "Retype Password"
+            password: True
+            size_hint: .7,.2
+            pos_hint: {"center_x":.5}
+        MDBoxLayout:
+            size_hint_y:.1
+            MDRaisedButton:
+                text: "back"
+                md_bg_color: "#a8dadc"
+                on_press: root.try_login()
+                size_hint: .5, 1
+            MDRaisedButton:
+                text: "Sign Up"
+                md_bg_color: "#a8dadc"
+                size_hint: .5,1
+                on_press: root.manager.current = "RegistrationScreen"
+
+<MainScreen>:
+    MDLabel:
+        text: "Main Screen"

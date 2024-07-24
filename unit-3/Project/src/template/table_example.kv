@@ -1,0 +1,30 @@
+ScreenManager:
+    TableScreen:
+        name: "TableScreen"
+
+<TableScreen>:
+    MDLabel:
+        text: "Bitcoin Exchange"
+        font_size: 20
+        halign: "center"
+    MDBoxLayout:
+        orientation: "horizontal"
+        size_hint: 1,.2
+
+        MDTextField:
+            id: receiver
+            hint_text: "Sender_id"
+            input_filter: "int"
+        MDTextField:
+            id: receiver
+            hint_text: "Receiver_id"
+            input_filter: "int"
+        MDTextField:
+            id: receiver
+            hint_text: "Amount"
+            input_filter: "int"
+        MDRaisedButton:
+            id: add
+            text: "New TX"
+            on_press: root.save()
+

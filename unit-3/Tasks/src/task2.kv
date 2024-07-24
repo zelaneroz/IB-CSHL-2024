@@ -1,0 +1,46 @@
+Screen:
+    size: 500,500
+
+    MDBoxLayout:
+        pos_hint:{"center_x":.5,"center_y":.5}
+        size_hint: .6,.6
+        orientation: "vertical"
+
+        MDLabel:
+            text: "Digital Storage (Bits & Bytes Converter)"
+            font_size: "60"
+            halign: "center"
+            bold: True
+        MDTextField:
+            id: user_input
+            hint_text: "Enter value"
+            font_size: 40
+            on_text:
+                app.set_input()
+        MDBoxLayout:
+            pos_hint:{"center_x":.5}
+            orientation: "horizontal"
+            pos_hint:{"center_x":.5}
+            padding:5,5,5,5
+
+            MDRaisedButton:
+                md_bg_color: "red"
+                text: "Bits to Bytes"
+                pos_hint:{"center_x":.5}
+                padding:5,5,5,5
+                on_release:
+                    app.to_byte()
+
+            MDRaisedButton:
+                text: "Bytes to Bits"
+                md_bg_color: "blue"
+                padding:5,5,5,5
+                pos_hint:{"center_x":.5}
+                on_release:
+                    app.to_bits()
+
+        MDLabel:
+            id: output
+            text: ""
+            halign:"center"
+            font_size: "40px"
