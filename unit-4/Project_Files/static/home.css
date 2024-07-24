@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+body{
+    background: linear-gradient(90deg, rgba(209,231,254,1) 0%, rgba(203,205,247,1) 85%);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/*-----NEW POST-------*/
+.new_post{
+    margin-top: 70px;
+    text-decoration: none;
+    width:75%;
+}
+
+.new_post a{
+    background:white;
+    width: 60%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-decoration: none;
+    border: 2px solid #d2c8c8;
+    margin: auto;
+    alignment: center;
+
+}
+/*-------------------*/
+
+.uname-bar {
+    display: flex;
+    flex-flow: row;
+    align-content: start;
+    width: 100%;
+}
+
+.uname{
+    font-size: 16px;
+    margin-right: 50%;
+}
+
+.web-title{
+    padding:2%;
+}
+
+.web-title h1{
+    font-size: 32px;
+}
+.uname-bar.date{
+    alignment: right;
+}
+p.date{
+    font-style: oblique;
+    color: grey;
+    font-size:15px;
+}
+
+body {
+    width: 100%;
+    height: auto;
+}
+
+main section.section-login {
+    width: 100%;
+    height: 20%;
+    /*Set background to linear gradient*/
+    background: url(https://rvs-gradie-signup-page.vercel.app/Assets/Background.png);
+    background: rgb(209,231,254);
+    background: linear-gradient(90deg, rgba(209,231,254,1) 0%, rgba(203,205,247,1) 85%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main section.section-login .section-main {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 0;
+}
+
+main section.section-login .section-login-2 {
+    width: 60%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: #013243;*/
+    background: none;
+    border-radius: 10px;
+    flex-direction: column;
+    row-gap:10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+main section.section-login .section-main .section-login-1 .section-login-1-main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 50px;
+}
+main section.section-login .section-main .section-login-1 .section-login-1-main .section-login-1-title {
+    font-size: 32px;
+    color: #2F2F2F;
+}
+main section.section-login .section-main .section-login-1 .section-login-1-main .section-login-1-text {
+
+color: #2F2F2F;
+
+font-size: 18px;
+}
+main section.section-login .section-main .section-login-1 .section-login-1-main .section-login-1-img {
+
+width: 100%;
+}
+main section.section-login .section-main .section-login-1 .section-login-1-main .section-login-1-img img {
+
+width: 100%;
+
+display: block;
+}
+
+/*MAIN POSTING BLOCK*/
+main section.section-login .section-main .section-login-2 .section-login-2-main {
+    width: 100%;
+    height:70vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*padding: 50px;*/
+
+    padding: 13px 20px;
+    border-radius: 5px;
+    border: 2px solid darkgrey;
+    outline: black 20px;
+    font-size: 16px;
+}
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-title {
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+}
+
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+}
+
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-1 input, main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-2 input, main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-3{
+    padding: 8px 0px;
+    /*border: 1px solid #e9e6e6;*/
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-4 {
+    display: flex;
+    column-gap: 7px;
+    align-items: center;
+}
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-4 p, main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-5 p {
+    font-size: 14px;
+}
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-4 p a, main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-5 p a {
+    font-weight: bold;
+    color: #9C61F1;
+}
+/*-----LIKE, SAVE, REPLY BUTTONS-----*/
+.login-form-submit-btn{
+    width:100%;
+    height:10%;
+    display: flex;
+    flex-direction: row;
+    row-gap: 2vh;
+}
+.like-btn {
+    display: flex;
+    flex-direction: row;
+    alignment: center;
+}
+
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-submit-btn.like-btn {
+    font-weight: bold;
+    color: #9C61F1;
+}
+
+.like-btn p{
+    text-align: center;
+    padding: 0px;
+    vertical-align: text-top;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: blue;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+
+    cursor: default;
+}
+
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-submit-btn button {
+    padding: 5px;
+    width: 10vh;
+    outline: none;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    width:10vh;
+    color: black;
+    padding: 0;
+}
+
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-submit-btn p{
+    width:10%;
+    color: dimgrey;
+}
+
+.login-form-submit-btn .fa{
+    position: relative;
+    width: 50px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.login-form-submit-btn button{
+    font-size: 15px;
+    background: none;
+    border: none;
+    padding-right: 4vh;
+}
+/*-----end-*/
+
+.login-form-3 p{
+    text-align: justify;
+}
+
+main section.section-login .section-main .section-login-2 .section-login-2-main .section-login-2-form .login-form-5 p {
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+
+    /* login page */
+    main section.section-login .section-login-1 .section-login-1-main, main section.section-login .section-login-2 .section-login-2-main {
+        width: 85%;
+    }
+    main section.section-login .section-login-1 .section-login-1-main .section-login-1-title, main section.section-login .section-login-1 .section-login-1-main .section-login-1-form {
+        margin-top: 35px;
+    }
+    main section.section-login .section-main {
+        width: 75%;
+        height: 80%;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    /* login page */
+    main section.section-login .section-main {
+        padding: 35px 0px;
+    }
+    main section.section-login .section-login-1 .section-login-1-main, main section.section-login .section-login-2 .section-login-2-main {
+        width: 100%;
+    }
+    main section.section-login .section-login-1 .section-login-1-main {
+        height: 90%;
+    }
+    main section.section-login .section-login-1 .section-login-1-main .section-login-1-title, main section.section-login .section-login-1 .section-login-1-main .section-login-1-form {
+        margin-top: 25px;
+    }
+    main section.section-login .section-main {
+        flex-direction: column;
+        width: 80%;
+        padding: 50px 0px;
+    }
+    main section.section-login .section-main .section-login-1, main section.section-login .section-login-2 {
+        width: 100%;
+    }
+
+    main section.section-login {
+        height: unset;
+    }
+}
+
+.login-form-3 input{
+    height: 200px;
+}
+
+.login-form-3 input:-ms-input-placeholder {
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+    main section.section-login .section-main {
+        width: 100%;
+        padding: 0px;
+    }
+    main section.section-login .section-main .section-login-2 .section-login-2-main {
+        padding: 35px 25px;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+.main-content{
+    background: linear-gradient(90deg, rgba(209,231,254,1) 0%, rgba(203,205,247,1) 85%);
+}
+.title{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    margin: auto;
+    /*margin-top: 20px;*/
+    padding-top: 20px;
+    margin-left: 40%;
+    background: none;
+}
+.logo{
+    width: 60px;
+    margin-right: 45px;
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+    margin-left: 1px;
+}
+body{
+    background: #dfe9f5;
+}
+
+nav{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    height: 100vh;
+    left:0;
+    background: #fff;
+    width: 60px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    overflow-y:auto;
+
+
+    z-index: 10000;
+   position: fixed;
+   top: 0px;
+   width: 100%;
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+}
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size:18px;
+    text-transform: uppercase;
+}
+
+a{
+    position: relative;
+    color: rgb(85,83,83);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.fa{
+    position: relative;
+    width: 50px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 5px;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 12px;
+    text-align: center;
+}
+a:hover{
+    background: #eee;
+}
+nav:hover{
+    width: 5%;
+    transition: all 0.5s ease;
+}

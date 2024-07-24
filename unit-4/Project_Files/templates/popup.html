@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask Popup Example</title>
+	<script>
+		function openPopup() {
+			var popup = document.getElementById("myPopup");
+			popup.classList.toggle("show");
+		}
+
+		function closePopup() {
+			var popup = document.getElementById("myPopup");
+			popup.classList.toggle("show");
+		}
+	</script>
+	<style>
+		.popup {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.popup .popup-content {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			background-color: #f1f1f1;
+			min-width: 200px;
+			padding: 10px;
+			z-index: 1;
+		}
+
+		.popup .popup-content.show {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="openPopup()">Click me for a popup!</button>
+
+	<div class="popup">
+		<div class="popup-content" id="myPopup">
+			<h1 id="popupText">Popup Box</h1>
+			<p>This is a popup box within the same window!</p>
+			<button onclick="closePopup()">Close</button>
+		</div>
+	</div>
+</body>
+</html>

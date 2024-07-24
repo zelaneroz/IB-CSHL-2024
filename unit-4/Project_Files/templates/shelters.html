@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shelters</title>
+    <link rel="stylesheet" href="/Project_Files/staticrs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body style="display: flex; flex-direction: row;">
+<div class="nav-parent" style="background: white; position: fixed; overflow: hidden;">
+    <ul style="display: flex; flex-direction: row; list-style-type: none;">
+        <li style="width: 10%"><a href="/home/%5B%5D" class="logo"><img src="/Project_Files/statictrans.png" style="width: 50px"><span class="logo"></span></a></li>
+        <li style="width: 10%"><a href="/home/%5B%5D" style="text-decoration: none;"><i class="fa fa-home" style="color:#9C61F1;"></i><span class="nav-item">Home</span></a></li>
+        <li style="width: 10%"><a href="/pet_care" style="text-decoration: none;"><i class="fa fa-heart"></i><span class="nav-item">Pet Care</span></a></li>
+        <li style="width: 10%"><a href="/shelters" style="text-decoration: none;"><i class="fa fa-dog"></i><span class="nav-item">Shelters</span></a></li>
+        <li style="width: 10%"><a href="/saves" style="text-decoration: none;"><i class="fa-regular fa-bookmark"></i><span class="nav-item">Saved</span></a></li>
+        <li style="width: 10%"><a href="/profile" style="text-decoration: none;"><i class="fa fa-user" style=""></i><span class="nav-item">Profile</span></a></li>
+        <li style="width: 10%"><a href="/logout" class="logout" style="text-decoration: none;"><i class="fa fa-sign-out-alt"></i><span class="nav-item">Log out</span></a></li>
+    </ul>
+</div>
+
+<!--CARD TO BE REPLICATED-->
+
+    <div class="cards" style="flex-direction: row;row-gap: 10px; padding-top: 5%;">
+    {% for post in posts %}
+        <div class="card">
+            <div class="card-title" style="margin-top: 2px;">
+                <h2 style="color:#9C61F1;">
+                    {{ post[1]}}
+                    <small style="color: #2F2F2F;font-weight: normal; padding-top: 5px;"><i class="fas fa-map-marker-alt" style="margin-right: 12px;"></i>{{ post[2] }}</small>
+                    <small style="color: #2F2F2F;font-weight: normal;"><i class="fas fa-phone fa-flip-horizontal" style="margin-right: 8px;"></i>{{ post[3] }}</small>
+                </h2>
+            </div>
+            <div class="card-content">
+                <p style="color: #2F2F2F; padding-left: 15px; padding-right: 15px;padding-top:6px;padding-bottom: 10px;">
+                      {{ post[4] }}
+                </p>
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+
+<!------------->
+
+</div>
+
+</body>
+</html>

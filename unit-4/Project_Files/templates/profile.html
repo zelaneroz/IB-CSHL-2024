@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - {{ posts[0][1] }}</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scratch</title>
+    <link rel="stylesheet" href="/Project_Files/staticss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="nav-parent" style="background: white; position: fixed; overflow: hidden;">
+    <ul style="display: flex; flex-direction: row; list-style-type: none;">
+        <li style="width: 10%"><a href="/home/%5B%5D" class="logo"><img src="/Project_Files/statictrans.png" style="width: 50px"><span class="logo"></span></a></li>
+        <li style="width: 10%"><a href="/home/%5B%5D" style="text-decoration: none;"><i class="fa fa-home" style="color:#9C61F1;"></i><span class="nav-item">Home</span></a></li>
+        <li style="width: 10%"><a href="/pet_care" style="text-decoration: none;"><i class="fa fa-heart"></i><span class="nav-item">Pet Care</span></a></li>
+        <li style="width: 10%"><a href="/shelters" style="text-decoration: none;"><i class="fa fa-dog"></i><span class="nav-item">Shelters</span></a></li>
+        <li style="width: 10%"><a href="/saves" style="text-decoration: none;"><i class="fa-regular fa-bookmark"></i><span class="nav-item">Saved</span></a></li>
+        <li style="width: 10%"><a href="/profile" style="text-decoration: none;"><i class="fa fa-user" style=""></i><span class="nav-item">Profile</span></a></li>
+        <li style="width: 10%"><a href="/logout" class="logout" style="text-decoration: none;"><i class="fa fa-sign-out-alt"></i><span class="nav-item">Log out</span></a></li>
+    </ul>
+</div>
+<main>
+    <section class="section-login">
+        <div class="new_post">
+            <a href="/new_post">What's on your mind?</a>
+        </div>
+        <div class="section-main">
+        {% if posts|length<1 %}
+            <p>No posts yet.</p>
+        {% else  %}
+            {% for post in posts %}
+            <!--SECTION-LOGIN-2 -->
+            <div class="section-login-2" style="height: border-box">
+                <div class="section-login-2-main">
+                    <div class="uname-bar">
+                        <h3 class="uname">{{ post[1] }}</h3>
+                        <p class="date">{{ post[5]}}</p>
+                    </div>
+                    <div class="section-login-2-form" method="post">
+                        <h1 class="section-login-2-title">{{ post[2] }}</h1>
+                        <div class="login-form-3" style="height: 50%;">
+                            <p>{{ post[3] }}</p>
+                        </div>
+                        <div class="login-form-submit-btn" style="height: 0.5vh; position: inherit">
+                            <button style="align-items: center; width:20%; color:dimgray" class="like-btn"><i class="fa-regular fa-heart" style="padding-right: 20px; color:black"></i>3</button>
+                            <button style="align-items: center;"><i class="fa-regular fa-comment"></i></button>
+                            <button style="align-items: center;"><i class="fa-regular fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endfor %}
+        {% endif %}
+
+        </div>
+</main>
+</body>
+</html>
+
+</body>
+</html>

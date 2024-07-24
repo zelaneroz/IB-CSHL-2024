@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create post</title>
+    <link rel="stylesheet" href="/Project_Files/staticst.css">
+</head>
+<body>
+<main>
+    <section class="section-login">
+        <div class="section-main">
+            <div class="section-login-2">
+                <div class="section-login-2-main">
+                    <h1 class="section-login-2-title">Create post</h1>
+                    <form class="section-login-2-form" method="post">
+                        <div class="login-form-1">
+                            <input type="text" id="input-email" placeholder="Title" name="title"required>
+                        </div>
+                        <div class="login-form-3">
+                            <input type="text" id="input-password" placeholder="What's up?" name="content" required maxlength="400">
+                        </div>
+                        <select id="options" name="options" required>
+                            <option value="" disabled selected>Select flair</option>
+                            <option value=Advice">Advice</option>
+                            <option value="Support">Support</option>
+                            <option value="Report">Report</option>
+                            <option value="Fluff">Fluff</option>
+                        </select>
+                        <div class="login-form-submit-btn">
+                            <a href="/home" id="cancel">Cancel</a>
+                            <input type="submit" name="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</main>
+</body>
+</html>
