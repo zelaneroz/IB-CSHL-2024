@@ -1,0 +1,1526 @@
+ScreenManager:
+    IntroScreen:
+        name:"IntroScreen"
+    SignUpScreen:
+        name:"SignUpScreen"
+    LoginScreen:
+        name:"LoginScreen"
+    CreatePostScreen:
+        name: "CreatePostScreen"
+    NetworkScreen:
+        name: "NetworkScreen"
+    HomeScreen:
+        name: "HomeScreen"
+    Flashcards:
+        name: "Flashcards"
+    SavedScreen:
+        name: "SavedScreen"
+    StatsScreen:
+        name: "StatsScreen"
+    Learn_1_1_Screen:
+        name: "Learn_1_1_Screen"
+    LearnScreen:
+        name: "LearnScreen"
+    TranslateScreen:
+        name: "TranslateScreen"
+
+
+<NetworkScreen>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # White color
+
+
+<CreatePostScreen>
+    MDBoxLayout:
+        orientation: 'vertical'
+        #-----UPPER BAR-----
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.10
+            Image:
+                source: 'src/images/logo_b.png'
+                size_hint: None, None  # This will disable the automatic sizing
+                size: dp(220), dp(220)  # Set the size of the image
+                allow_stretch: True  # Allow the image to be stretched
+                pos_hint: {"center_y":0.5}
+                size_hint_y: 0.7
+
+
+        #-----CONTENT-----
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.9, 0.8
+            pos_hint: {'center_x':0.5,'center_y':0.5}
+            spacing: 40
+            padding: [0, 30, 20, 0] # Left, Top, Right, Bottom padding in dp or pixels
+
+            MDCard:
+                radius:0
+                size_hint: 1.0, 0.5
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 1  # Color of the border (black)
+                    Line:
+                        width: 2  # Width of the border line
+                        rectangle: (self.x + 1, self.y + 1, self.width - 2, self.height - 2)
+                MDBoxLayout:
+                    orientation: 'vertical'
+
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        md_bg_color: '#F030C3'
+                        MDIconButton:
+                            icon: 'images/white-arrow-back.png'
+                            on_release: root.backtofeed()
+                        MDLabel:
+                            text:"Create post"
+                    MDBoxLayout:
+                        orientation: 'vertical'
+
+                        MDTextField:
+                            hint_text: "Title"
+                            mode: "round"
+                            max_text_length: 15
+                            id: post_title
+                            font_name: "Helvetica"
+                            size_hint_y: None
+                            height: dp(48)
+
+                        MDTextField:
+                            hint_text: "Text (optional)"
+                            mode: "round"
+                            max_text_length: 300
+                            id:post_content
+                            size_hint_y: None
+                            font_name: "Helvetica"
+                            height: dp(48)
+
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+
+                        MDRoundFlatButton:
+                            text:'Cancel'
+                            line_color: 'FF00CE'
+                            text_color: "FF00CE"
+                            on_release: root.cancel_post()
+                        MDRoundFlatButton:
+                            text:'Post'
+                            md_bg_color: '#FF00CE'
+                            text_color: "white"
+                            line_color: 'FF00CE'
+                            font_name: 'fonts/HelveticaNeue-01.ttf'
+                            on_press: root.new_post()
+
+
+
+#            md_bg_color: 'purple'
+#            #---CREATE POST BUTTON ---
+#            MDFlatButton:
+#                text: 'Create post'
+#                md_bg_color: 'F030C3'
+#                size_hint_x: 1.0
+#                size_hint_y: 0.05
+##                text_color: 1, 1, 1, 1
+#                font_name: 'fonts/HelveticaNeue-Bold-02.ttf'
+#                on_release:root.create_post()
+
+
+
+#
+#        MDBottomNavigation:
+#            size_hint_y:0.15
+#            panel_color: 'red'
+#
+#            MDBottomNavigationItem:
+#                id:bottom_nav_network
+#                name: 'home'
+#                text: 'Home'
+#                icon:'images/icon-home.png'
+#                icon:'home'
+#                size_hint_x:0.38
+#                on_tab_touch_down:root.net2home()
+#
+#            MDBottomNavigationItem:
+#                name: 'stats'
+#                text: 'Saved'
+#                icon: 'images/icon-star-on.png'
+#                size_hint_x:0.38
+#                on_tab_touch_down:root.net2stats()
+#
+#            MDBottomNavigationItem:
+#                name: 'network'
+#                text: 'Network'
+#                icon: 'images/icon-network.png'
+#                size_hint_x:0.38
+
+
+
+
+
+
+#<NetworkScreen>:
+#    canvas.before:
+#        Color:
+#            rgba: 1, 1, 1, 1  # White color
+#
+#    MDBottomNavigation:
+#        size_hint_y:0.15
+#        panel_color: 'red'
+#
+#        MDBottomNavigationItem:
+#            name: 'home'
+#            text: 'Home'
+#            icon:'images/icon-home.png'
+#            icon:'home'
+#            size_hint_x:0.38
+#            on_tab_touch_down:root.net2home()
+#
+#        MDBottomNavigationItem:
+#            name: 'stats'
+#            text: 'Saved'
+#            icon: 'images/icon-star-on.png'
+#            size_hint_x:0.38
+#            on_tab_touch_down:root.net2stats()
+#
+#        MDBottomNavigationItem:
+#            name: 'network'
+#            text: 'Network'
+#            icon: 'images/icon-network.png'
+#            size_hint_x:0.38
+
+
+
+
+
+#        Rectangle:
+#            size: self.size
+#            pos: self.pos
+
+#<NetworkScreen>:
+#    MDBoxLayout:
+#        orientation: 'vertical'
+#        #-----UPPER BAR-----
+#        MDBoxLayout:
+#            orientation: 'horizontal'
+#            size_hint_y: 0.10
+##            md_bg_color: 'red'
+#            Image:
+#                source: 'src/images/logo_b.png'
+##                opacity: 0.7
+#                size_hint: None, None  # This will disable the automatic sizing
+#                size: dp(220), dp(220)  # Set the size of the image
+#                allow_stretch: True  # Allow the image to be stretched
+#                pos_hint: {"center_y":0.5}
+#                size_hint_y: 0.7
+#
+#
+#        #-----CONTENT-----
+#        MDBoxLayout:
+#            orientation: 'vertical'
+#            size_hint: 0.9, 0.8
+#            pos_hint: {'center_x':0.5,'center_y':0.5}
+#            spacing: 40
+#            padding: [0, 30, 20, 0] # Left, Top, Right, Bottom padding in dp or pixels
+#
+##            md_bg_color: 'purple'
+#            #---CREATE POST BUTTON ---
+#            MDFlatButton:
+#                text: 'Create post'
+#                md_bg_color: 'F030C3'
+#                size_hint_x: 1.0
+#                size_hint_y: 0.05
+##                text_color: 1, 1, 1, 1
+#                font_name: 'fonts/HelveticaNeue-Bold-02.ttf'
+#                on_release:root.create_post()
+#
+#            #-----SCROLL VIEW POSTS DRAFT ----
+#            MDBoxLayout:
+#                size_hint: 1.0, 0.8
+#                md_bg_color: 'red'
+#                spacing: 10
+#                orientation: 'vertical'
+#                pos_hint: {'center_x':0.5,'center_y':0.5}
+
+
+
+
+
+
+#                ScrollView:
+#                    id: scroll_view
+#                    MDList:
+#                        id: scroll_view_list
+#                        adaptive_height: True
+#                        OneLineListItem:
+#                            text: 'sample 1'
+#                        OneLineListItem:
+#                            text: 'sample 2'
+#                        OneLineListItem:
+#                            text: 'sample 3'
+#                        OneLineListItem:
+#                            text: 'sample 4'
+#                        OneLineListItem:
+#                            text: 'sample 5'
+#                        OneLineListItem:
+#                            text: 'sample 6'
+#                        OneLineListItem:
+#                            text: 'sample 1'
+#                        OneLineListItem:
+#                            text: 'sample 2'
+#                        OneLineListItem:
+#                            text: 'sample 3'
+#                        OneLineListItem:
+#                            text: 'sample 4'
+#                        OneLineListItem:
+#                            text: 'sample 5'
+#                        OneLineListItem:
+#                            text: 'sample 6'
+#                        MDCard:
+#                            size_hint: None, None
+#                            size: "280dp", "120dp"
+#                            pos_hint: {"center_x": 0.5}
+#                            # Card content goes here
+#                            MDLabel:
+#                                text: "Card 1"
+#                                halign: "center"
+#
+#                        MDCard:
+#                            size_hint: None, None
+#                            size: "280dp", "120dp"
+#                            pos_hint: {"center_x": 0.5}
+#                            # Card content goes here
+#                            MDLabel:
+#                                text: "Card 2"
+#                                halign: "center"
+#                        MDCard:
+#                            size_hint: None, None
+#                            size: "280dp", "120dp"
+#                            pos_hint: {"center_x": 0.5}
+#                            # Card content goes here
+#                            MDLabel:
+#                                text: "Card 3"
+#                                halign: "center"
+#                        MDCard:
+#                            size_hint: None, None
+#                            size: "280dp", "120dp"
+#                            pos_hint: {"center_x": 0.5}
+#                            # Card content goes here
+#                            MDLabel:
+#                                text: "Card 4"
+#                                halign: "center"
+#                        MDCard:
+#                            size_hint: None, None
+#                            size: "280dp", "120dp"
+#                            pos_hint: {"center_x": 0.5}
+#                            # Card content goes here
+#                            MDLabel:
+#                                text: "Card 5"
+#                                halign: "center"
+#
+#                        MDCard:
+#                            size_hint: None, None
+#                            size: "280dp", "120dp"
+#                            pos_hint: {"center_x": 0.5}
+#                            # Card content goes here
+#                            MDLabel:
+#                                text: "Card 6"
+#                                halign: "center"
+#
+#                        MDCard:
+#                            size_hint: None, None
+#                            size: "280dp", "120dp"
+#                            pos_hint: {"center_x": 0.5}
+#                            # Card content goes here
+#                            MDLabel:
+#                                text: "Card 7"
+#                                halign: "center"
+#
+
+
+
+            #-----SCROLL VIEW POSTS-----
+#            MDBoxLayout:
+#                size_hint: 1.0, 0.8
+##                md_bg_color: 'red'
+#                spacing: 40
+#                orientation: 'vertical'
+#                pos_hint: {'center_x':0.5,'center_y':0.5}
+#                #DUMMY POSTS
+#
+#                MDCard:
+#                    size: 0.8, 0.15
+#                    radius: 0
+#                    canvas.before:
+#                        Color:
+#                            rgba: 0, 0, 0, 1  # Color of the border (black)
+#                        Line:
+#                            width: 2  # Width of the border line
+#                            rectangle: (self.x + 1, self.y + 1, self.width - 2, self.height - 2)
+#
+#                    #LEFT HAND SIDE; BUTTONS
+#                    MDBoxLayout:
+#                        orientation: 'horizontal'
+#                        MDBoxLayout:
+#                            size_hint: 0.15,1
+#                            orientation: 'vertical'
+#                            md_bg_color: '#9A50FF'
+#                            MDIconButton:
+#                                icon: "images/arrow-up.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.upvote_post()
+#                            MDIconButton:
+#                                icon: "images/arrow-down.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.downvote_post()
+#                        MDBoxLayout:
+#                            size_hint: 0.8,1
+##                            md_bg_color: 'red'
+#                            orientation: 'vertical'
+#                            MDBoxLayout:
+#                                orientation: 'horizontal'
+#                                center_x: 0.2
+#                                padding: [40, 0, 0, 0] # Left, Top, Right, Bottom
+#                                MDLabel:
+#                                    text: 'username'
+#                                    font_name:'Helvetica'
+#                                    font_size:'25px'
+#                                MDLabel:
+#                                    text: 'Sep 12 2023'
+#                                    font_name:'Helvetica'
+#                                    font_size:'18px'
+#                                    text_color: '#484848'
+#                            MDLabel:
+#                                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales. Lorem ipsum dolor sit amet. "
+#                                font_name:'Helvetica'
+#                                font_size:'22px'
+#                                halign: 'center'
+#
+#                MDCard:
+#                    size: 0.8, 0.15
+#                    radius: 0
+#                    canvas.before:
+#                        Color:
+#                            rgba: 0, 0, 0, 1  # Color of the border (black)
+#                        Line:
+#                            width: 2  # Width of the border line
+#                            rectangle: (self.x + 1, self.y + 1, self.width - 2, self.height - 2)
+#
+#                    #LEFT HAND SIDE; BUTTONS
+#                    MDBoxLayout:
+#                        orientation: 'horizontal'
+#                        MDBoxLayout:
+#                            size_hint: 0.15,1
+#                            orientation: 'vertical'
+#                            md_bg_color: '#9A50FF'
+#                            MDIconButton:
+#                                icon: "images/arrow-up.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.upvote_post()
+#                            MDIconButton:
+#                                icon: "images/arrow-down.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.downvote_post()
+#                        MDBoxLayout:
+#                            size_hint: 0.8,1
+##                            md_bg_color: 'red'
+#                            orientation: 'vertical'
+#                            MDBoxLayout:
+#                                orientation: 'horizontal'
+#                                center_x: 0.2
+#                                padding: [40, 0, 0, 0] # Left, Top, Right, Bottom
+#                                MDLabel:
+#                                    text: 'username'
+#                                    font_name:'Helvetica'
+#                                    font_size:'25px'
+#                                MDLabel:
+#                                    text: 'Sep 12 2023'
+#                                    font_name:'Helvetica'
+#                                    font_size:'18px'
+#                                    text_color: '#484848'
+#                            MDLabel:
+#                                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales. Lorem ipsum dolor sit amet. "
+#                                font_name:'Helvetica'
+#                                font_size:'22px'
+#                                halign: 'center'
+#
+#                MDCard:
+#                    size: 0.8, 0.15
+#                    radius: 0
+#                    canvas.before:
+#                        Color:
+#                            rgba: 0, 0, 0, 1  # Color of the border (black)
+#                        Line:
+#                            width: 2  # Width of the border line
+#                            rectangle: (self.x + 1, self.y + 1, self.width - 2, self.height - 2)
+#
+#                    #LEFT HAND SIDE; BUTTONS
+#                    MDBoxLayout:
+#                        orientation: 'horizontal'
+#                        MDBoxLayout:
+#                            size_hint: 0.15,1
+#                            orientation: 'vertical'
+#                            md_bg_color: '#9A50FF'
+#                            MDIconButton:
+#                                icon: "images/arrow-up.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.upvote_post()
+#                            MDIconButton:
+#                                icon: "images/arrow-down.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.downvote_post()
+#                        MDBoxLayout:
+#                            size_hint: 0.8,1
+##                            md_bg_color: 'red'
+#                            orientation: 'vertical'
+#                            MDBoxLayout:
+#                                orientation: 'horizontal'
+#                                center_x: 0.2
+#                                padding: [40, 0, 0, 0] # Left, Top, Right, Bottom
+#                                MDLabel:
+#                                    text: 'username'
+#                                    font_name:'Helvetica'
+#                                    font_size:'25px'
+#                                MDLabel:
+#                                    text: 'Sep 12 2023'
+#                                    font_name:'Helvetica'
+#                                    font_size:'18px'
+#                                    text_color: '#484848'
+#                            MDLabel:
+#                                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales. Lorem ipsum dolor sit amet. "
+#                                font_name:'Helvetica'
+#                                font_size:'22px'
+#                                halign: 'center'
+#                MDCard:
+#                    size: 0.8, 0.15
+#                    radius: 0
+#                    canvas.before:
+#                        Color:
+#                            rgba: 0, 0, 0, 1  # Color of the border (black)
+#                        Line:
+#                            width: 2  # Width of the border line
+#                            rectangle: (self.x + 1, self.y + 1, self.width - 2, self.height - 2)
+#
+#                    #LEFT HAND SIDE; BUTTONS
+#                    MDBoxLayout:
+#                        orientation: 'horizontal'
+#                        MDBoxLayout:
+#                            size_hint: 0.15,1
+#                            orientation: 'vertical'
+#                            md_bg_color: '#9A50FF'
+#                            MDIconButton:
+#                                icon: "images/arrow-up.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.upvote_post()
+#                            MDIconButton:
+#                                icon: "images/arrow-down.png"
+#                                pos_hint: {'center_x':0.5, 'center_y':0.5}
+#                                on_release:root.downvote_post()
+#                        MDBoxLayout:
+#                            size_hint: 0.8,1
+##                            md_bg_color: 'red'
+#                            orientation: 'vertical'
+#                            MDBoxLayout:
+#                                orientation: 'horizontal'
+#                                center_x: 0.2
+#                                padding: [40, 0, 0, 0] # Left, Top, Right, Bottom
+#                                MDLabel:
+#                                    text: 'username'
+#                                    font_name:'Helvetica'
+#                                    font_size:'25px'
+#                                MDLabel:
+#                                    text: 'Sep 12 2023'
+#                                    font_name:'Helvetica'
+#                                    font_size:'18px'
+#                                    text_color: '#484848'
+#                            MDLabel:
+#                                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales. Lorem ipsum dolor sit amet. "
+#                                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales. Lorem ipsum dolor sit amet. "
+#                                font_name:'Helvetica'
+#                                font_size:'22px'
+#                                halign: 'center'
+#
+#
+#
+        #-----NAVIGATION BAR-----
+        #NETWORK ICON --> ACTIVATE
+
+#        MDBottomNavigation:
+#            size_hint_y:0.15
+#            panel_color: 'red'
+#
+#            MDBottomNavigationItem:
+#                name: 'home'
+#                text: 'Home'
+#                icon:'images/icon-home.png'
+#                icon:'home'
+#                size_hint_x:0.38
+#
+#            MDBottomNavigationItem:
+#                name: 'stats'
+#                text: 'Saved'
+#                icon: 'images/icon-star-on.png'
+#                size_hint_x:0.38
+#                on_tab_touch_down:root.home2stats()
+#
+#            MDBottomNavigationItem:
+#                name: 'network'
+#                text: 'Network'
+#                icon: 'images/icon-network.png'
+#                size_hint_x:0.38
+
+
+
+
+<SignUpScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: 'src/images/logo.png'
+            opacity: 0.7
+            size_hint: None, None  # This will disable the automatic sizing
+            size: dp(220), dp(220)  # Set the size of the image
+            allow_stretch: True  # Allow the image to be stretched
+            pos_hint: {"center_x":0.5, "center_y":0.7}
+            size_hint_y: 0.28
+
+        MDBoxLayout:
+            orientation:'vertical'
+            pos_hint: {"center_x":0.5, "center_y":0.5}
+            size_hint_y:0.9
+            spacing: dp(50)
+            MDLabel:
+                text:'Register'
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                font_name:'Helvetica'
+                bold:True
+                font_size:'50px'
+                halign: 'center'
+                md_bg_color: '#9851FF'
+                style:'h1'
+                pos_hint: {"center_x":0.5, "center_y":0.5}
+                size_hint_y: 0.1
+                height: self.texture_size[1] + dp(20)  # Adjust the 20 to your desired padding
+                padding: [dp(10), dp(10)]  # [padding_x, padding_y]
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 0.7, None
+                height: self.minimum_height
+#                md_bg_color: 'blue'
+                pos_hint: {"center_x":0.5, "center_y":0.5}
+                spacing: dp(10)
+                padding: dp(10)
+
+                MDTextField:
+                    hint_text: "Name"
+                    mode: "round"
+                    max_text_length: 15
+                    id:name
+                    font_name: "Helvetica"
+                    size_hint_y: None
+                    height: dp(48)
+
+                MDTextField:
+                    hint_text: "Username"
+                    mode: "round"
+                    max_text_length: 15
+                    font_name: "Helvetica"
+                    id:uname
+                    size_hint_y: None
+                    height: dp(48)
+
+                MDTextField:
+                    hint_text: "Password"
+                    mode: "round"
+                    max_text_length: 15
+                    password: True
+                    id:password
+                    size_hint_y: None
+                    font_name: "Helvetica"
+                    height: dp(48)
+
+                MDTextField:
+                    hint_text: "Confirm Password"
+                    mode: "round"
+                    max_text_length: 15
+                    password: True
+                    id: confirm_password
+                    size_hint_y: None
+                    height: dp(48)
+                    font_name: "Helvetica"
+                    helper_text_mode: 'persistent'
+
+            MDRoundFlatButton:
+                text: "[b]Register[/b]"
+                markup: True
+                font_size: "30px"
+                font_name: "Helvetica"
+                size_hint_y: None
+                size_hint_x: 0.5
+                height: dp(48)
+                text_color: 1, 1, 1, 1
+                on_press: root.try_register()
+                md_bg_color: "#9851FF"
+                pos_hint: {"center_x":0.5,"center_y":0.5}
+
+            MDTextButton:
+                text: "Already have an account? [u][color=#FF35DC]Log in here[/color][/u]"
+                custom_color: "#F08DA9"
+                markup: True
+                size_hint: 1, .25
+                halign: "center"
+                font_size: '25px'
+                font_name: 'Helvetica'
+                pos_hint: {"center_x":0.5,"center_y":.5}
+                on_press: root.login_screen()
+
+<LoginScreen>
+    MDBoxLayout:
+        orientation: 'vertical'
+        Image:
+            source: 'src/images/logo.png'
+            opacity: 0.7
+            size_hint: None, None  # This will disable the automatic sizing
+            size: dp(220), dp(220)  # Set the size of the image
+            allow_stretch: True  # Allow the image to be stretched
+            pos_hint: {"center_x":0.5, "center_y":0.7}
+            size_hint_y: 0.28
+
+        MDBoxLayout:
+            orientation:'vertical'
+            pos_hint: {"center_x":0.5, "center_y":0.5}
+            size_hint_y:0.9
+            spacing: dp(80)
+            MDLabel:
+                text:'Log in'
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                font_name:'Helvetica'
+                bold:True
+                font_size:'50px'
+                halign: 'center'
+                md_bg_color: '#E536FF'
+                style:'h1'
+                pos_hint: {"center_x":0.5, "center_y":0.5}
+                size_hint_y: 0.1
+                height: self.texture_size[1] + dp(20)  # Adjust the 20 to your desired padding
+                padding: [dp(10), dp(10)]  # [padding_x, padding_y]
+            MDBoxLayout:
+                orientation:'vertical'
+                size_hint: 0.7, None
+                height: self.minimum_height
+#                md_bg_color: 'blue'
+                pos_hint: {"center_x":0.5, "center_y":0.5}
+                spacing: dp(20)
+                padding: dp(10)
+
+                MDTextField:
+                    hint_text: "Username"
+                    mode: "round"
+                    max_text_length: 15
+                    font_name: "Helvetica"
+                    id:uname
+                    size_hint_y: None
+                    height: dp(48)
+
+                MDTextField:
+                    hint_text: "Password"
+                    mode: "round"
+                    max_text_length: 15
+                    password: True
+                    id:password
+                    size_hint_y: None
+                    font_name: "Helvetica"
+                    height: dp(48)
+
+            MDRoundFlatButton:
+                text: "[b]Log in[/b]"
+                markup: True
+                font_size: "30px"
+                font_name: "Helvetica"
+                size_hint_y: None
+                size_hint_x: 0.5
+                height: dp(48)
+                text_color: 1, 1, 1, 1
+                on_press: root.try_login()
+                md_bg_color: "#E536FF"
+                pos_hint: {"center_x":0.5,"center_y":0.5}
+
+            MDTextButton:
+                text: "Don't have an account? [u][color=#A34CFF]Register here[/color][/u]"
+                markup: True
+                size_hint: 1, .25
+                halign: "center"
+                font_size: '25px'
+                font_name: 'Helvetica'
+                pos_hint: {"center_x":0.5,"center_y":.5}
+                on_press: root.signup_screen()
+
+
+<IntroScreen>:
+    RelativeLayout:
+        AsyncImage:
+            source:'images/intro_ellipse.png'
+            allow_stretch: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.28}
+        AsyncImage:
+            source:'images/logo.png'
+            allow_stretch: True
+            size_hint: 0.8,0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+
+#        MDBoxLayout:
+#            orientation:'vertical'
+        MDRoundFlatButton:
+            pos_hint:{"center_x":0.5, "center_y":0.4}
+            size_hint: 0.5, 0.06
+            text: "Register"
+            text_color: "black"
+            md_bg_color: 'FFA3E7'
+            line_color: 'E536FF'
+            font_name: 'fonts/HelveticaNeue-Bold-02.ttf'
+            on_release:root.signup_screen()
+        MDRoundFlatButton:
+            pos_hint:{"center_x":0.5, "center_y":0.3}
+            text: "Log in"
+            text_color: "black"
+            font_name: 'fonts/HelveticaNeue-Bold-02.ttf'
+            size_hint: 0.5, 0.06
+            line_color: "E536FF"
+            md_bg_color: 'white'
+            on_release:root.login_screen()
+
+
+<Learn_1_1_Screen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_y:0.12
+            MDIconButton:
+                icon:'images/arrow_back.png'
+                pos_hint: {'center_x': 0.4, 'center_y': 0.5}  # Position the button in the center
+                size_hint: 0.2,0.2
+                on_release:root.backtolearn()
+            MDLabel:
+                text: root.label_text_main
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                valign:'center'
+                halign:'center'
+                font_name:'Helvetica'
+                font_size:'50px'
+                bold: True
+                size_hint:0.5,1
+            MDLabel:
+                text: "Progress Bar"
+                font_size: 15
+                pos_hint: {'center_x':.9,'center_y':0.5}
+                size_hint:0.2,1
+
+        MDBoxLayout:
+            orientation: 'vertical'
+#            md_bg_color: 'purple'
+            size_hint_y:0.88
+            pos_hint: {'center_x':.5,'center_y':0.3}
+#            spacing: 0.
+
+            MDLabel:
+                text: 'What does this character transcribe to?'
+                size_hint_y: 0.05
+#                md_bg_color: 'blue'
+                valign:'center'
+                halign:'center'
+                font_name:'Helvetica'
+                font_size:'40px'
+                bold: True
+
+            #FLASHCARD
+            MDBoxLayout:
+                size_hint_y: 0.2
+                orientation: 'horizontal'
+                MDIconButton:
+                    icon:'images/arrow_back.png'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.7}  # Position the button in the center
+                    size_hint_x: 0.1
+                    on_release:root.prev_card()
+
+                FloatLayout:
+                    MDCard:
+                        border_radius:20
+                        id: card_input
+                        radius:[14]
+                        md_bg_color: '#9851FF'
+                        size_hint: 0.7, 0.6
+                        pos_hint: {'center_x':.5,'center_y':0.7}
+                        on_release: root.flip_card()
+
+                        MDLabel:
+                            text:root.flashcard_contents[0]
+                            halign: 'center'
+                            id: flashcard_content
+                            font_name: 'Noto'
+                            color: 'white'
+                            font_size: '250px'
+                            bold: True
+
+                    MDIconButton:
+                        icon: 'star-outline'
+                        id: star_button
+                        pos_hint: {'center_x': 0.75, 'center_y': 0.95}
+                        size: '48dp', '48dp'
+                        on_release: root.toggle_star()
+#                BoxLayout:
+#                    orientation: 'vertical'
+#                    size: root.size
+#                    pos: root.pos
+#
+#                    FloatLayout:
+#                        size_hint_y: None
+#                        height: '48dp'
+#
+#                        MDIconButton:
+#                            icon: 'star-outline'
+#                            size_hint: None, None
+#                            size: '48dp', '48dp'
+#                            pos_hint: {'right': 1}
+#                            on_release: root.toggle_star()
+#
+#                        MDLabel:
+#                            text: root.flashcard_contents[0]
+#                            halign: 'center'
+#                            id: flashcard_content
+#                            font_name: 'Noto'
+#                            color: 'white'
+#                            font_size: '250px'
+#                            bold: True
+
+                MDIconButton:
+                    icon:'images/arrow_next.png'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.7}  # Position the button in the center
+                    size_hint_x: 0.1
+                    on_release:root.next_card()
+
+#            #OPTIONS
+#            MDBoxLayout:
+#                orientation: 'vertical'
+#                size_hint_y: 0.4
+#                MDBoxLayout:
+#                    size_hint_y: 0.5
+#                    orientation: 'horizontal'
+#                    MDCard:
+#                        text: 'Ka'
+#                    MDCard:
+#                        text: 'ke'
+#
+#                MDBoxLayout:
+#                    size_hint_y: 0.5
+#                    orientation: 'horizontal'
+#                    MDCard:
+#                        text: 'ki'
+#                    MDCard:
+#                        text: 'ko'
+#                    MDCard:
+#                        text: 'ku'
+#            MDLabel:
+#                text: 'Space placeholder'
+#                size_hint_y: 0.1
+
+
+
+
+
+
+
+
+
+<LearnScreen>:
+    RelativeLayout:
+        AsyncImage:
+            source: 'images/learn_bg.png'  # Replace this with the URL or local path of your image
+            allow_stretch: True
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+
+        MDIconButton:
+            icon:'images/arrow_back.png'
+            pos_hint: {'center_x': 0.08, 'center_y': 0.95}  # Position the button in the center
+            size_hint: 0.2,0.2
+            on_release:root.backtohome()
+
+        MDLabel:
+            text: "Learn"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.78}
+            valign:'center'
+            halign:'center'
+            font_name:'Helvetica'
+            font_size:'50px'
+            bold: True
+#            md_bg_color: 'blue'
+            size_hint:1,0.05
+        MDScrollView:
+            size_hint: 1, 0.75
+            #CARDS OF LEVELS
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: 15
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'FFA3E7'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/1.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'About Baybayin'
+                            valign:'center'
+                            font_name:'Helvetica'
+                            id: 'level1'
+                            bold: True
+
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'FFB019'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/2.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'Tagalog Transcription and Prerequisites'
+                            valign:'center'
+                            font_name:'Helvetica'
+                            id: 'level2'
+                            bold: True
+
+
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'00FF9D'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/3.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'Baybayin Basics'
+                            valign:'center'
+                            font_name:'Helvetica'
+                            id: 'level3'
+                            bold: True
+
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'FFA3E7'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/4.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'Vowels and Kudlit'
+                            valign:'center'
+                            font_name:'Helvetica'
+                            id: 'level4'
+                            bold: True
+
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'FFB019'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/5.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'Ba,Ka,Da,Ga'
+                            valign:'center'
+                            font_name:'Helvetica'
+                            id: 'level5'
+                            bold: True
+
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'00FF9D'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/6.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'Ha, La, Ma, Na, Nga'
+                            valign:'center'
+                            font_name:'Helvetica'
+                            id: 'level6'
+                            bold: True
+
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'FFA3E7'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/7.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'Pa, Sa, Ta, Wa, Ya'
+                            valign:'center'
+                            id: 'level7'
+                            font_name:'Helvetica'
+                            bold: True
+
+                MDCard:
+                    border_radius:25
+                    radius:[20]
+                    size_hint:0.7,0.2
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    md_bg_color:'FFB019'
+                    on_release: root.learn_gen(self)
+                    MDBoxLayout:
+                        orientation: 'horizontal'
+                        spacing: 20
+                        Image:
+                            source: 'images/8.png'
+                            size_hint:0.4,0.4
+                            pos_hint: {'center_x': 0.8, 'center_y': 0.5}
+                        MDLabel:
+                            text:'Common Words'
+                            id: 'level8'
+                            valign:'center'
+                            font_name:'Helvetica'
+                            bold: True
+
+
+
+<HomeScreen>:
+    MDBoxLayout:
+        orientation:'vertical'
+        spacing: 61
+
+        #red_1 (Upper half)
+        MDBoxLayout:
+            size_hint_y:258
+            orientation:'vertical'
+            #orange_1.1 (Logo + Daily Task)
+            MDCard:
+                size_hint_y:0.43
+                Image:
+                    size_hint_y:0.8
+                    source:'images/logo.png'
+                    pos_hint: {"center_x":0.5, "center_y":0.5}
+#            MDCard:
+#                md_bg_color: 'pink'
+#                size_hint:0.8,0.57 #147
+#                pos_hint:{"center_x":0.5,"center_y":0.5}
+#                MDLabel:
+#                    text: 'Daily Task'
+
+
+        #red_2 (lower half)
+        MDBoxLayout:
+            size_hint_y:493
+            orientation: 'vertical'
+            spacing:53
+
+            MDBoxLayout:#orange_2.1 (Functions)
+                orientation:'vertical'
+                size_hint_y:0.85 #419PX
+                spacing: 14 #0.15
+                #blue_2.1 (Learn, Test)
+                MDBoxLayout: #231px
+                    size_hint: 0.81,0.55
+                    pos_hint:{"center_x":0.5,"center_y":0.5}
+                    orientation:'horizontal'
+                    spacing:20
+                    MDCard: #LEARN
+                        border_radius:20
+                        radius:[14]
+                        size_hint_x:0.38
+                        on_release:root.tolearn()
+                        Image:
+                            source:'images/Learn.png'
+                            allow_stretch:True
+                            keep_ratio: True
+                            size:self.parent.size
+
+#                       MDLabel:
+#                            text: 'Learn'
+                    MDCard: #TEST
+                        border_radius:20
+                        size_hint_x:0.38
+                        radius:[14]
+                        on_release:root.home2saved()
+                        Image:
+                            source:'images/saved.png'
+                            allow_stretch:True
+                            keep_ratio: True
+                            size:self.parent.size
+                #blue_2.2 (Translate)
+                MDCard:
+                    size_hint:0.81,0.3
+                    pos_hint:{"center_x":0.5,"center_y":0.5}
+                    on_release:root.home2translate()
+                    MDBoxLayout:
+                        Image:
+                            source:'images/Translate.png'
+                            allow_stretch:True
+                            keep_ratio:True
+                            size_hint:1,1
+
+#                    MDLabel:
+#                        text:'Translate'
+
+
+            #orange_2.2 (NavBar)
+#            MDBottomNavigation:
+            MDBoxLayout:
+                size_hint_y:0.15
+                panel_color: 'white'
+                orientation: 'horizontal'
+
+                MDIconButton:
+                    name: 'home'
+                    text: 'Home'
+                    icon:'images/icon-filled-home.png'
+#                    icon:'home'
+                    size_hint_x:0.38
+#                    md_bg_color:'black'
+                    BoxLayout:
+                        orientation:'vertical'
+
+                MDIconButton:
+                    name: 'network'
+                    text: 'Network'
+                    icon: 'images/icon-network.png'
+                    size_hint_x:0.4
+#                    on_tab_touch_down:root.home2net()
+                    on_release: root.home2net()
+
+#                MDBottomNavigationItem:
+                MDIconButton
+                    name: 'log-out'
+                    text: 'Sign out'
+                    icon: 'images/icon-log-out.png'
+                    size_hint_x:0.38
+                    on_release:root.logout()
+
+
+
+<Flashcards>:
+    MDBoxLayout:
+        orientation:'vertical'
+        md_bg_color:'grey'
+        spacing:45
+
+        #red1: about baybayin
+        MDBoxLayout:
+            md_bg_color:'purple'
+            orientation:'horizontal'
+            size_hint_y:0.12
+            MDIconButton:
+                icon:'arrow-left'
+                on_release:root.backtohome()
+            MDLabel:
+                text:'About Baybayin'
+                font_name:'Helvetica'
+                bold:True
+                style:'h1'
+            MDCard:
+                MDLabel:
+                    text:'5/10'
+                    font_name:'Helvetica'
+
+        #red2: prompt or question
+        MDBoxLayout:
+            size_hint_y:0.16
+            md_bg_color:'blue'
+            MDLabel:
+                text:'What does this character transcribe to?'
+                font_name:'Helvetica'
+
+        #red3: content + choices
+        MDBoxLayout:
+            size_hint_y:0.72
+            md_bg_color:'purple'
+            orientation:'vertical'
+            spacing:77
+            MDBoxLayout:
+                size_hint:.81,.43
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                MDLabel:
+                    md_bg_color:'pink'
+                    text:'Content'
+            MDBoxLayout:
+                spacing:33
+                orientation:'vertical'
+                size_hint_x:.25
+                MDBoxLayout:
+                    orientation:'horizontal'
+                    spacing:20
+                    size_hint_y:61
+                    #CHOICE 1 - CARD
+                    MDCard:
+                        size_hint_x:0.4
+                        MDLabel:
+                            text:'Choice 1'
+                    MDCard:
+                        size_hint_x:0.4
+                        MDLabel:
+                            text:'Choice 2'
+                MDBoxLayout:
+                    size_hint_y:61
+                    orientation:'horizontal'
+                    MDCard:
+                        MDLabel:
+                            text:'Choice 3'
+                    MDCard:
+                        MDLabel:
+                            text:'Choice 4'
+                    MDCard:
+                        MDLabel:
+                            text:'Choice 5'
+
+
+
+
+<TranslateScreen>:
+    MDBoxLayout:
+        orientation:'vertical'
+        #TOP
+        MDBoxLayout:
+            size_hint_y:411
+            spacing: 65
+            orientation:'vertical'
+            #ORANGE_1
+            MDBoxLayout:
+                size_hint_y:80
+                orientation:'vertical'
+#                md_bg_color:'violet'
+                MDBoxLayout:
+                    orientation:'horizontal'
+                    MDIconButton:
+                        icon:'images/arrow_back.png'
+                        on_release:root.backtohome()
+                    MDLabel:
+                        text:'Translate'
+                        valign:'center'
+                        font_name:'Helvetica'
+                        font_size:'50px'
+                        #halign:'center'
+                        padding:'170px'
+                        bold: True
+                MDLabel:
+                    text:'Tagalog to Baybayin'
+                    font_name:'Helvetica'
+                    halign:'center'
+            #ORANGE_2 - TAGALOG TEXT FIELD
+            MDBoxLayout:
+                size_hint_y:244
+#                md_bg_color:'pink'
+                orientation:'vertical'
+                MDLabel:
+                    text:'Tagalog'
+                    font_name:'Helvetica'
+                    size_hint_y:21
+                    padding:66
+#                MDCard:
+#                    size_hint:.81,223
+#                    pos_hint:{"center_x":0.5}
+#                    border_radius:25
+#                    radius:[25]
+                MDTextFieldRect:
+                    hint_text: "Fill mode"
+                    size_hint:.81,223
+                    border_radius:25
+                    pos_hint:{"center_x":0.5,"center_y":0.8}
+                    border_radius:25
+                    radius:[25]
+                    id: tbd
+                    hint_text: "Type here"
+#                MDCard:
+#                    size_hint:.81,223
+#                    pos_hint:{"center_x":0.5}
+#                    border_radius:25
+#                    radius:[25]
+#                    MDTextField:
+#                        size_hint_x:0.8
+#                        hint_text: "No helper text"
+#                        pos_hint:{"center_x":0.5,"center_y":0.8}
+
+        #ARROW MIDDLE
+        MDIconButton:
+            size_hint_y:65
+            icon:'images/arrow.png'
+            pos_hint:{"center_x":0.5,"center_y":0.5 }
+            allow_stretch:True
+            keep_ratio:True
+            on_release:root.translate()
+
+        #BOTTOM
+        MDBoxLayout:
+            size_hint_y:336
+#            md_bg_color:'grey'
+            orientation:'vertical'
+            MDBoxLayout:
+                size_hint_y:244
+                md_bg_color:'purple'
+                orientation:'vertical'
+                MDLabel:
+                    text:'Baybayin'
+                    font_name:'Helvetica'
+                    size_hint_y:21
+                    padding:66
+                MDCard:
+                    size_hint:.81,223
+                    pos_hint:{"center_x":0.5}
+                    outline_width: dp(5)
+                    outline_color:'black'
+                    border_radius:25
+                    radius:[25]
+                    MDLabel:
+                        text: ''
+                        font_name:'Noto'
+                        id: translation
+                        font_size:60
+                        pos_hint_y:0.8
+                    MDIconButton:
+                        icon:'images/icon-copy.png'
+                        on_release:root.copy_translation()
+            MDBoxLayout:
+                size_hint_y:92
+                md_bg_color:'white'
+
+<SavedScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_y:0.12
+            MDIconButton:
+                icon:'images/arrow_back.png'
+                pos_hint: {'center_x': 0.4, 'center_y': 0.5}  # Position the button in the center
+                size_hint: 0.2,0.2
+                on_release:root.backtohome()
+            MDLabel:
+#                text: root.label_text_main
+                text: 'Saved Cards'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                valign:'center'
+                halign:'center'
+                font_name:'Helvetica'
+                font_size:'50px'
+                bold: True
+                size_hint:0.5,1
+            MDLabel:
+                text: "Progress Bar"
+                font_size: 15
+                pos_hint: {'center_x':.9,'center_y':0.5}
+                size_hint:0.2,1
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y:0.88
+            pos_hint: {'center_x':.5,'center_y':0.3}
+
+            MDLabel:
+                text: 'What does this character transcribe to?'
+                size_hint_y: 0.05
+                valign:'center'
+                halign:'center'
+                font_name:'Helvetica'
+                font_size:'40px'
+                bold: True
+
+            #FLASHCARD
+            MDBoxLayout:
+                size_hint_y: 0.2
+                orientation: 'horizontal'
+                MDIconButton:
+                    icon:'images/arrow_back.png'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.7}  # Position the button in the center
+                    size_hint_x: 0.1
+                    on_release:root.prev_card()
+
+                FloatLayout:
+                    MDCard:
+                        border_radius:20
+                        id:saved_card_input
+                        radius:[14]
+                        md_bg_color: '#9851FF'
+                        size_hint: 0.7, 0.6
+                        pos_hint: {'center_x':.5,'center_y':0.7}
+                        on_release: root.flip_card()
+
+                        MDLabel:
+#                            text: 'sa'
+#                            text:root.flashcard_contents[0]
+#                            text: root.flashcard_contents[0] if root.flashcard_contents else "No saved cards as of now"
+                            text: root.flashcard_contents[0] if root.flashcard_contents else " "
+                            halign: 'center'
+                            id: saved_card_content
+                            font_name: 'Noto'
+                            color: 'white'
+                            font_size: '250px'
+                            bold: True
+
+                    MDIconButton:
+                        icon: 'star'
+                        id: saved_star_button
+                        pos_hint: {'center_x': 0.75, 'center_y': 0.95}
+                        size: '48dp', '48dp'
+                        on_release: root.toggle_star()
+
+                MDIconButton:
+                    icon:'images/arrow_next.png'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.7}  # Position the button in the center
+                    size_hint_x: 0.1
+                    on_release:root.next_card()
+
+<StatsScreen>:
+    MDLabel:
+        text:'Stats Screen'
