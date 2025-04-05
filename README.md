@@ -1,1 +1,1 @@
-This repository contains all notes and quarter projects I have completed at UWC ISAK Japan to fulfill requirements for IB Computer Science HL (M24). To view my final Internal Assesment (IA) file marked a 7 (30/34), see repository 'baybai'.
+This repository contains all notes and quarter projects I have completed at UWC ISAK Japan to fulfill requirements for IB Computer Science HL (M24).
