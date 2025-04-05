@@ -1,0 +1,74 @@
+<mxfile host="app.diagrams.net" modified="2023-08-29T17:27:28.419Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="-EIkOW41P7QEtLC_uGku" version="21.7.0" type="github">
+  <diagram name="ica" id="jJCeSG0IoPa3USaC70qB">
+    <mxGraphModel dx="598" dy="443" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HDwddfs8iBz0bnu71akz-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-1" target="HDwddfs8iBz0bnu71akz-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="10" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-3" target="HDwddfs8iBz0bnu71akz-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-3" value="Normalize the observed signals to have zero mean and unit variance. " style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-5" target="HDwddfs8iBz0bnu71akz-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-5" value="Generate the mixing matrix (weights) randomly." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="140" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-8" target="HDwddfs8iBz0bnu71akz-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-8" target="HDwddfs8iBz0bnu71akz-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="80" y="245" />
+              <mxPoint x="80" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-8" value="if stopping&lt;br&gt;criterion is met" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="122.5" y="210" width="105" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-10" target="HDwddfs8iBz0bnu71akz-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-10" value="Inverse the mixing matrix &amp;amp; multiply it with the original observed data." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-12" value="no" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="180" y="270" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-13" target="HDwddfs8iBz0bnu71akz-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-13" value="Using contrast functions and a Stochastic Gradient Approach, update the mixing matrix." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="380" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HDwddfs8iBz0bnu71akz-16" target="HDwddfs8iBz0bnu71akz-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="520" />
+              <mxPoint x="290" y="245" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-16" value="Decorrelate the updated mixing vectors." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-19" value="yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="90" y="220" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HDwddfs8iBz0bnu71akz-20" value="End" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="580" width="70" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
