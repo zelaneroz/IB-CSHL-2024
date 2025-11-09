@@ -18,6 +18,11 @@ The solution is **Baybai**, a mobile application that provides an accessible and
 - **Translator**: A tool for converting Tagalog words and phrases into Baybayin script
 - **Social Network**: A platform for collaborative learning and community support
 
+  ## Demo
+  Click to see video.
+  [![Screenshot 2025-11-08 at 11 54 17 PM](https://github.com/user-attachments/assets/8eda96b3-597a-4e6b-9896-2daa039d8f43)](https://youtu.be/y_bNp67gNhg)
+
+
 ## Features
 1. **User Progress Tracking**: A personalized system that tracks the user’s learning journey with an encrypted login system.
 2. **Flashcards**: Visual cues for active recall, showing Baybayin characters and their corresponding Tagalog translations.
